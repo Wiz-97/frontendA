@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Day3_폼(form)</title>
+    <link rel="stylesheet" href="13member.css">
+</head>
+
+<body>
+    <!-- 사용자 입력을 처리하는 form 작성(form = 양식) 
+        form 태그 내에 입력요소 태그들을 포함시켜서 작성해야 함
+        작성완료된 입력을 서버로 전달
+    -->
+
+
+    <div style="width:70%;margin:auto;max-width: 600px;">
+        <!-- 일반적인 목적으로 사용되는 블록요소: div, 인라인요소: span -->
+        <h3>회원 가입</h3>
+        <form action="">
+            <table style="width: 100%;">
+                <!-- label 태그는 연관된 텍스트 클릭하면 입력요소가 포커스를 갖게 할 수 있습니다. -->
+                <tr>
+                    <td><label for="lblname" class="title mpt">이름</label></td>
+                    <!-- 입력요소 태그에는 값을 식별하기 위한 속성 name 값이 꼭 필요 -->
+                    <td><input type="text" name="name" id="lblname"></td>
+                </tr>
+                <tr>
+                    <td><label for="lblpass" class="title mpt">패스워드</label></td>
+                    <td><input type="password" name="password" minlength="4" id="lblpass"></td>
+                </tr>
+                <tr>
+                    <td><label for="lblemail" class="title mpt">이메일</label></td>
+                    <td><input type="email" name="email" id="lblemail"></td>
+                </tr>
+                <tr>
+                    <td><label for="lblage" class="title mpt">나이</label></td>
+                    <!-- value 값을 지정하면 화면에 초기값으로 표시 -->
+                    <td><input type="number" name="age" value="19" min="15" max="99" id="lblage"></td>
+                </tr>
+                <tr>
+                    <td><label for="lbladdr" class="title mpt">지역(주소)</label></td>
+                    <td>
+                        <!-- 콤보박스: 입력과 선택이 같이 됨
+                        선택상자: 선택만    -->
+                        <select name="addr" id="lbladdr">
+                            <!-- value 값이 서버로 전달됨 -->
+                            <option value="서울">서울</option>
+                            <option value="인천">인천</option>
+                            <option value="대구" selected="selected">대구</option>
+                            <option value="광주">광주</option>
+                            <option value="부산">부산</option>
+                        </select>
+                    </td>
+                <tr>
+                    <td><label for="lblgender" class="title mpt">성별</label></td>
+                    <td>
+                        <!-- 옵션(라디오) 버튼: 여러 항목 중 하나만 선택 -->
+                        <input type="radio" name="gender" value="male">
+                        <label for="lblmale" class="mpt">남성</label>
+                        <input type="radio" name="gender" value="female">
+                        <label for="lblfemale" class="mpt">여성</label>
+                        <input type="radio" name="gender" checked="checked" value="unknown">
+                    </td>
+                </tr>
+                <tr>
+                    <td>취미</td>
+                    <td>
+                        <!-- 체크박스: 다중선택. name 속성은 -->
+                        <input type="checkbox" name="hobby" value="축구" id="lblfoot">
+                        <label for="lblfoot" class="mpt">축구</label>
+                        <input type="checkbox" name="hobby" value="농구" id="lblbasket">
+                        <label for="lblbasket" class="mpt">농구</label>
+                        <input type="checkbox" name="hobby" value="달리기" id="lblrun">
+                        <label for="lblrun" class="mpt">달리기</label>
+                        <input type="checkbox" name="hobby" value="수영" id="lblswim">
+                        <label for="lblswim" class="mpt">수영</label>
+                    </td>
+                </tr>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <!-- input은 type 생략하면 text -->
+                        <!-- <input type="button" value="버튼"> -->
+                        <!-- submit이 서버로 입력데이터를 전송(제출) -->
+                        <!-- <input type="submit" value="제출">
+                    <input type="reset" value="초기화"> -->
+                        <!-- button은 기본동작이 submit -->
+                        <button>가입하기</button>
+                        <button type="reset">다시쓰기</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <!-- 실행 URL 예시:
+        http://192.168.35.58:5500/day3/13form.html?name=%EA%B9%80%EB%95%A1%EB%95%A1&password=1234&email=test%40naver.com&age=22
+        -> ? 뒤에 사용자 입력항목들 & 기호로 연결되어 하나의 문자열(쿼리 스트링)로 추가
+        -> ? 뒤에 query string 보일 때는 주로 조회(검색) 동작, 입력한 값이 url 안 보일때 데이터를 저장(post)하는 동작
+        -> 입력항목은 name 속상값이 key, 사용자가 입력한 값은 value
+        -> value에 한글 또는 기호가 포함될 때는 utf-8로 인코딩 됨
+    -->
+</body>
+
+</html>

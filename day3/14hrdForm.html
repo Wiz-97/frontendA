@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        tr,td{
+            border: 1px solid black;
+            background-color: darkgrey;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">홈쇼핑 회원 등록</h1>
+    <form action="">
+        <table>
+            <tr>
+                <td>회원번호(자동발생)</td>
+                <td><input type="number" name="custno"></td>
+            </tr>
+            <tr>
+                <td>회원성명</td>
+                <td><input type="text" name="name"></td>
+            </tr>
+            <tr>
+                <td>회원전화</td>
+                <td><input type="phone" name="phone"></td>
+            </tr>
+            <tr>
+                <td>회원주소</td>
+                <td><input type="addr" name="addr"></td>
+            </tr>
+            <tr>
+                <td>가입일자</td>
+                <td><input type="date" name="reg_date"></td>
+            </tr>
+            <tr>
+                <td><label for="lblgrade">고객등급[A:VIP,B:일반,C:직원]</label></td>
+                <td>
+                    <select name="grade" id="lblgrade">
+                        <option value="VIP">A</option>
+                        <option value="일반">B</option>
+                        <option value="직원">C</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>도시코드</td>
+                <td><input type="number" name="citycode"></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <button>등록</button>
+                    <button>조회</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
