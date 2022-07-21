@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial;
+        padding: 10px;
+        background: coral
+    }
+
+    /* header/Blog Title */
+    .header {
+        padding: 30px;
+        text-align: center;
+        background: chocolate;
+    }
+
+    .header h1 {
+        font-size: 50px;
+    }
+
+    /* Style the top navigation bar */
+    .topnav {
+        overflow: hidden;
+        background-color: #333;
+    }
+
+    /* Style the topnav links */
+    .topnav a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    /* Change color on hover */
+    .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+
+    /* Create two unequal columns that floats next to each other */
+    /* Left column */
+    .leftcolumn {
+        float: left;
+        width: 75%;
+        border: solid 1px gray;
+    }
+
+    /* Right column */
+    .rightcolumn {
+        float: left;
+        width: 25%;
+        background-color: white;
+        padding-left: 20px;
+        border: 1px solid gray;
+    }
+
+    /* Fake image */
+    .fakeimg {
+        background-color: rgb(155, 245, 215);
+        width: 100%;
+        padding: 20px;
+    }
+
+    /* Add a card effect for articles */
+    .card {
+        background-color: white;
+        padding: 20px;
+        margin-top: 20px;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 20px;
+        text-align: center;
+        background: azure;
+        margin-top: 20px;
+    }
+
+    /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 800px) {
+
+        .leftcolumn,
+        .rightcolumn {
+            width: 100%;
+            padding: 0;
+        }
+    }
+
+    /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+    @media screen and (max-width: 400px) {
+        .topnav a {
+            float: none;
+            width: 100%;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>내 블로그</h1>
+        <p>인터넷창 크기 조절시 크기에 맞게 변형</p>
+    </div>
+
+    <div class="topnav">
+        <a href="#">홈</a>
+        <a href="#">탭1</a>
+        <a href="#">탭2</a>
+        <a href="#" style="float:right">탭3</a>
+    </div>
+
+    <div class="row">
+        <div class="leftcolumn">
+            <div class="card">
+                <h2>Dark Souls</h2>
+                <h5>From Software, 2016-07-21</h5>
+                <div class="fakeimg" style="height:200px;">
+                <img src="../이미지/darksoul1.jpg" alt="img1" style="width: 100%; height: 100%;""></div>
+                <p>ARPG</p>
+                <p>1인용 패키지 게임</p>
+            </div>
+            <div class="card">
+                <h2>당신을 위하여 - The Cross</h2>
+                <h5>음악, 2022-06-25</h5>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/hT2S-y3sf7Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <p>가수: The Cross(이시하, 김혁건)</p>
+                <p>Rock</p>
+            </div>
+        </div>
+        <div class="rightcolumn">
+            <div class="card">
+                <h2>About Me</h2>
+                <div class="fakeimg" style="height:100px;">
+                <img src="../이미지/workplace.jpg" alt="" style="width:100%;height:100%"></div>
+                <p>자기소개</p>
+            </div>
+            <div class="card">
+                <h3>Popular Post</h3>
+                <div class="fakeimg">
+                    <p>인기글1</p>
+                </div>
+                <div class="fakeimg">
+                    <p>인기글2</p>
+                </div>
+                <div class="fakeimg">
+                    <p>인기글3</p>
+                </div>
+            </div>
+            <div class="card">
+                <h3>Follow Me</h3>
+                <p><iframe width="100%" height="100%" src="https://www.youtube.com/embed/xVUO6WheNr4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h2>바닥</h2>
+    </div>
+
+    </style>
+
+    <body>
+
+    </body>
+
+</html>
