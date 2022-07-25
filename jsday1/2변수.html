@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSDay1_Variable</title>
+</head>
+<body>
+    <!-- 자바스크립트의 변수 선언 : var 
+    1. 데이터 타입 지정 안합니다.
+    2. 같은 변수이름을 중복해서 선언해도 오류 발생 안합니다.
+    3. {   } 블록 지역변수 적용이 안됩니다. 
+    4. 변수를 선언하지 않고도 사용해도 오류 발생 안합니다.
+    위의 해결방법으로 strict mod(엄격모드)
+    위의 해결방법으로 ES6(규격화된 자바스크립트버전)에서 let, const(상수) 키워드로 선언합니다. -->
+    <script>
+        // 'use strict'     // 2)번 오류가 안 나는 것을 오류가 발생하도록 함
+        var v1=456
+        document.write(v1)
+        document.write('<br>')
+        var v1=999          // 1) c, java, ... 등 다른 언어에서는 오류 - 중복된 선언
+        document.write(v1)
+        document.write('<br>')
+        v2 = 111
+        document.write(v2)  // 2) c, java, ... 등 다른 언어에서는 오류 - 변수선언 없이 사용 v2, v3
+        v3 = '하핳'
+        document.write('<br>' + v3)
+        if(10>5) {
+            v1=444          // 3) 다른 언어에서는 {} 선언된 변수는 지역변수
+                            // 그러나 전역변수로 결과가 출력 -> let을 사용해야 지역변수
+            document.write('<br>' + v1)     //444
+            let v2 = 555
+            // let v2 = 777         // let은 var과 다르게 같은 변수명 중복선언 X
+        }
+        document.write('<br>' + v1)         //444 -> 3)번 결과
+        document.write('<br>' + v2)         //111 -> 555 선언은 {} 안에서 했기 때문에 적용 X (지역변수)
+        
+    </script>
+    
+</body>
+</html>
