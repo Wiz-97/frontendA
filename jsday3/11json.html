@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JSDay3_open api & json</title>
+</head>
+
+<body>
+    <p style="margin: 10px">
+        <label for="query">검색어: </label><input type="text" id="query">
+        <label for="page">page: </label><input type="text" id="page" value="1" max="50">
+        <label for="size">size: </label><input type="text" id="size" value="10" max="50">
+        <input type="radio" id="accuracy" checked name="sort"> <label for="accuracy">정확도순</label>
+        <input type="radio" id="recency" name="sort"> <label for="recency">최신순</label>
+        <button id="search" style="padding: 7px 10px; margin-left: 10px">검색</button>
+    </p>
+    <hr>
+    <h4>검색 결과</h4>
+    <p id="list"></p>
+    <script src="11openapi.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JSDay3_schedule</title>
+    <style>
+        table {
+            width: 80%;
+        }
+
+        td {
+            border: 1px solid tomato;
+            width: 10%;
+            padding: 7px 12px;
+            text-align: center;
+        }
+
+        th {
+            width: 13%;
+            background-color: tomato;
+            color: white;
+            padding: 7px 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>TIME</th>
+            <th>TODO</th>
+        </tr>
+        <!-- tbody 태그는 표에서 제목이 아닌 내용을  -->
+        <tbody id="contents"></tbody>
+    </table>
+    <button id="add">일정 추가하기</button>
+    <script>
+        const schedule = [{ time: '09:00', todo: '수업' },
+        { time: '11:00', todo: '과제' },
+        { time: '12:30', todo: '점심식사' },
+        { time: '14:00', todo: '주간회의' },
+        { time: '16:45', todo: '자료조사' }]
+        const set_contents = function () {
+            let result = ''
+            schedule.forEach(function (value) {
+                result += `<tr><td>${value.time}</td>
+                    <td>${value.todo}</td></tr>`
+            })
+            document.getElementById('contents').innerHTML = result
+        }
+
+        set_contents()
+        document.getElementById('add').addEventListener('click', add_schedule)
+        function add_schedule() {
+            let atime = prompt('시간을 입력하세요')
+            let atodo = prompt('할일을 입력하세요')
+
+            //배열요소 추가: push() 함수 - 배열 정렬 - set_contents 함수호출
+            schedule.push({ time: atime, todo: atodo })
+
+
+            //schedule 배열  sort는 안하고 새로운 요소 생성해서 가장 아래에 추가
+            // const newtr = document.createElement('tr')
+            // const newtd = `<td>${atime}</td>
+            // <td>${atodo}</td>`
+            // newtr.innerHTML = newtd
+            // document.getElementById('contents').appendChild(newtr)
+
+
+            // new_tr += `<tr><td>${atime}</td>
+            //     <td>${atodo}</td></tr>`
+            // document.getElementById('contents').appendChild(new_tr)
+            schedule.sort(function(a, b){ // 오름차순 정렬
+                if(a.time < b.time) {
+                    return -1;
+                } else {
+                    return 1;
+                }
+            })
+
+        }
+    </script>
+</body>
+
+</html>
